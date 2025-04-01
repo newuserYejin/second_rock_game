@@ -1,0 +1,123 @@
+.wholeContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+
+  >div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0.2;
+  }
+
+  >div:first-child {
+    justify-content: space-between;
+    gap: 20px;
+    flex: 0.8;
+
+    >div {
+      width: 50%;
+    }
+  }
+
+  .user {
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 2em;
+
+    >div {
+      width: 80%;
+    }
+
+    .imgBox {
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        border: solid 3px black;
+        padding: 50px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        height: 80%;
+        aspect-ratio: 1/1;
+      }
+
+      .notChoose {
+        /* background-color: pink; */
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    gap: 15px;
+
+    input {
+      display: none;
+    }
+
+    label {
+      font-size: 2.5em;
+      font-weight: 700;
+      border: solid 4px #aaaaaa;
+      border-radius: 10px;
+      padding: 10px;
+      width: 100px;
+      text-align: center;
+      color: #aaaaaa;
+    }
+
+    label:hover {
+      color: #7a7a7a;
+      border-color: #7a7a7a;
+      background-color: white;
+    }
+
+    input:disabled+label:hover {
+      color: #aaaaaa;
+      border-color: #aaaaaa;
+      background: none;
+    }
+
+    input:checked+label {
+      color: #d5bdaf;
+      border-color: #d5bdaf;
+      background-color: white;
+    }
+
+    input:checked+label:hover {
+      color: #d5bdaf;
+      border-color: #d5bdaf;
+      background-color: white;
+    }
+  }
+
+  .resetGame {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .resetGame:hover {
+    background-color: #bebaba;
+    color: white;
+    font-size: 2.3em;
+  }
+}

@@ -18,6 +18,9 @@ function App() {
   // 결과
   const [result, setResult] = useState(null);
 
+  // 선 색
+  const [color, setColor] = useState(null);
+
   useEffect(() => {
     console.log("사용자의 선택 : ", select);
     if (select == null) {
@@ -54,6 +57,17 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    console.log("색상결정 : ", result);
+    if (result == null || result == "tie") {
+      setColor(null);
+    } else if (result == "win") {
+      setColor(true);
+    } else if (result == "lose") {
+      setColor(false);
+    }
+  }, [result]);
+
   function setGame() {
     setSelect(null);
     setImgNum(0);
@@ -80,12 +94,14 @@ function App() {
               ? "lose"
               : "win"
           }
+          color={color != null ? !color : null}
         ></Box>
 
         <Box
           userName="user"
           imgName={select == null ? "question" : images[select]}
           result={result == null ? "result" : result}
+          color={color != null ? color : null}
         ></Box>
       </div>
 
